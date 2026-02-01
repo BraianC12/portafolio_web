@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Braian Carranza | Portafolio</title>
+
+    <!-- BOOSTRAP CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary: #6c63ff;
+            --secondary: #00c9a7;
+            --dark: #0f172a;
+            --light: #f8fafc;
+        }
+
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--light);
+            color: #1e293b;
+        }
+
+        section {
+            padding: 120px 0;
+            scroll-margin-top: 90px;
+        }
+
+        .navbar {
+            backdrop-filter: blur(10px);
+        }
+
+        /* HERO */
+
+        .hero {
+            min-height: 100vh;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            top: -200px;
+            right: -200px;
+        }
+
+        .hero .btn {
+            border-radius: 30px;
+            padding: 12px 28px;
+            font-weight: 500;
+        }
+
+        /* TITLES */
+        .section-title {
+            font-weight: 700;
+            margin-bottom: 50px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            width: 60px;
+            height: 4px;
+            background: var(--primary);
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            border-radius: 2px;
+        }
+
+
+        /* SKILLS */
+        .skill-box {
+            background: white;
+            padding: 25px;
+            border-radius: 16px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s;
+            height: 100%;
+        }
+
+        .skill-box:hover {
+            transform: translateY(-8px);
+        }
+
+        .skill-box i {
+            font-size: 2rem;
+            color: var(--primary);
+        }
+
+        /*PRO*/
+        .skill-card {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            height: 100%;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+            transition: all 0.35s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .skill-card::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            opacity: 0;
+            transition: 0.35s;
+        }
+
+        .skill-card:hover::before {
+            opacity: 0.08;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-12px);
+        }
+
+        .skill-icon {
+            font-size: 2.5rem;
+            color: var(--primary);
+        }
+
+        .skill-title {
+            font-weight: 600;
+            margin-top: 15px;
+        }
+
+        .tech-badge {
+            background: #eef2ff;
+            color: #3730a3;
+            font-size: 0.85rem;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-weight: 500;
+        }
+
+        /* BARRAS*/
+        .skill-bar {
+            height: 8px;
+            background: #e5e7eb;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .skill-bar-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            border-radius: 10px;
+        }
+
+        .skill-bar-fill {
+            width: 0;
+            animation: grow 1.2s ease forwards;
+        }
+
+        @keyframes grow {
+            to {width: var(--level);}
+        }
+
+
+        /* PROJECTS */
+
+        .project-card {
+            border: none;
+            border-radius: 20px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+            height: 100%;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+        }
+
+
+        /* CONTACTO */
+        .contact-box {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));        
+            color: white;
+            padding: 50px;
+            border-radius: 25px;
+        }
+
+        footer {
+            background: var(--dark);
+            color: #cbd5f5;
+        }
+
+     </style>
+
+</head>
+<body>
+
+    <!-- NAVBAR -->
+     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" style="background: rgba(15,23,42,0.9);">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#inicio">Braian</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto gap-lg-3">
+                    <li class="nav-item"><a  class="nav-link" href="#inicio">Inicio</a></li>
+                    <li class="nav-item"><a  class="nav-link" href="#sobre-mi">Sobre mí</a></li>
+                    <li class="nav-item"><a  class="nav-link" href="#skills">Skills</a></li>
+                    <li class="nav-item"><a  class="nav-link" href="#proyectos">Proyectos</a></li>
+                </ul>
+            </div>
+        </div>
+     </nav>
+    
+     <!-- HERO -->
+      <section id="inicio" class="hero d-flex align-items-center">
+        <div class="container">
+            <div class="row align-items-center text-center text-md-start">
+                <div class="col-md-6">
+                <h1 class="displa-4 fw-bold">Braian Carranza</h1>
+                <p class="lead">Estudiante de Ingeniería en Informática · Desarrollo & Data</p>
+                <div class="d-flex justify-content-center justify-content-md-start gap-3 mt-4 flex-wrap">
+                    <a href="#" class="btn btn-dark">Descargar CV</a>
+                    <a href="https://github.com/BraianC12" class="btn btn-outline-dark">GitHub</a>
+                    <a href="https://www.linkedin.com/in/braian-carranza-3775b3292/" class="btn btn-outline-dark">Linkedin</a>
+                </div>
+            </div>
+            <div class="col-md-6 mt-5 mt-md-0 text-center">
+                <img src="img/perfil.jpg" alt="Foto de perfil" class="img-fluid rounded-circle shadow-lg" style="max-width: 280px;">
+            </div>
+            
+        </div>
+        </div>
+      </section>
+
+      <!-- SOBRE MÍ -->
+    <section id="sobre-mi" class="bg-white">
+    <div class="container">
+        <h2 class="section-title">Sobre mí</h2>
+
+        <div class="row align-items-center g-5">
+        
+        <!-- TEXTO -->
+        <div class="col-md-7">
+            <p class="fs-5">
+            Soy estudiante de <strong>Ingeniería en Informática (3er año)</strong> en la UNAJ.
+            Me interesa el <strong>desarrollo backend</strong> y el área de <strong>datos</strong>, con foco en construir soluciones claras, escalables y bien diseñadas.
+            </p>
+
+            <p class="fs-6 text-muted">
+            Trabaje a lo largo de mi estudios en diferentes tipos de proyectos, con el manejo de la programacion orientada a objetos, estructuas de datos, patrones de diseño, etc.
+            Tambien con placas Arduino, creacion de redes informaticas, bases de datos, consultas, métricas, donde aplico buenas practicas desde el inicio.
+            </p>
+
+            <!-- MINI HIGHLIGHTS -->
+            <div class="d-flex flex-wrap gap-3 mt-4">
+            <span class="badge rounded-pill bg-primary px-3 py-2">
+                <i class="bi bi-code-slash me-1"></i> Backend
+            </span>
+            <span class="badge rounded-pill bg-success px-3 py-2">
+                <i class="bi bi-database me-1"></i> Data
+            </span>
+            <span class="badge rounded-pill bg-dark px-3 py-2">
+                <i class="bi bi-gear me-1"></i> POO
+            </span>
+            </div>
+        </div>
+
+        <!-- CARDS -->
+        <div class="col-md-5">
+            <div class="row g-3">
+            <div class="col-12">
+                <div class="skill-box">
+                <i class="bi bi-mortarboard"></i>
+                <h6 class="mt-2 mb-1">Formación</h6>
+                <p class="mb-0 text-muted">Ingeniería en Informática · UNAJ</p>
+                <p class="mb-0 text-muted">Tecnico en Programación · E.E.S.T N°4</p>
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="skill-box">
+                <i class="bi bi-lightning-charge"></i>
+                <h6 class="mt-2 mb-1">Perfil</h6>
+                <p class="mb-0 text-muted">Analítico · Autodidacta · Proactivo</p>
+                </div>
+            </div>
+            </div>
+        </div>
+
+        </div>
+    </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="bg-light">
+    <div class="container">
+        <h2 class="section-title">Skills</h2>
+
+        <div class="row g-4">
+
+        <!-- LENGUAJES -->
+        <div class="col-md-4">
+            <div class="skill-card">
+            <div class="d-flex align-items-center gap-3 mb-2">
+                <div class="rounded-circle d-flex align-items-center justify-content-center"
+                    style="width:50px;height:50px;background:#eef2ff;">
+                <i class="bi bi-code-slash skill-icon"></i>
+                </div>
+                <h5 class="skill-title mb-0">Lenguajes</h5>
+            </div>
+
+            <p class="text-muted small">
+                Uso frecuente en proyectos académicos y personales.
+            </p>
+
+            <div class="d-flex flex-wrap gap-2 my-3">
+                <span class="tech-badge">Python</span>
+                <span class="tech-badge">C#</span>
+                <span class="tech-badge">SQL</span>
+                <span class="tech-badge">HTML</span>
+                <span class="tech-badge">CSS</span>
+            </div>
+
+            <div class="mt-3">
+                <small>Python · Backend / ETL</small>
+                <div class="skill-bar mb-2">
+                <div class="skill-bar-fill" style="--level:80%;"></div>
+                </div>
+
+                <small>C# · POO / Patrones</small>
+                <div class="skill-bar mb-2">
+                <div class="skill-bar-fill" style="--level:65%;"></div>
+                </div>
+
+                <small>SQL · Consultas & métricas</small>
+                <div class="skill-bar">
+                <div class="skill-bar-fill" style="--level:75%;"></div>
+                </div>
+            </div>
+            </div>
+        </div>
+
+        <!-- CONCEPTOS -->
+        <div class="col-md-4">
+            <div class="skill-card">
+            <div class="d-flex align-items-center gap-3 mb-2">
+                <div class="rounded-circle d-flex align-items-center justify-content-center"
+                    style="width:50px;height:50px;background:#ecfeff;">
+                <i class="bi bi-diagram-3 skill-icon"></i>
+                </div>
+                <h5 class="skill-title mb-0">Conceptos</h5>
+            </div>
+
+            <p class="text-muted small">
+                Fundamentos aplicados en sistemas reales y prácticas universitarias.
+            </p>
+
+            <div class="d-flex flex-wrap gap-2 my-3">
+                <span class="tech-badge">POO</span>
+                <span class="tech-badge">ETL</span>
+                <span class="tech-badge">Estructuras de Datos</span>
+                <span class="tech-badge">Patrones de Diseño</span>
+            </div>
+
+            <ul class="small text-muted ps-3 mb-0">
+                <li>Clean Code</li>
+                <li>Separación de responsabilidades</li>
+                <li>Buenas prácticas desde el diseño</li>
+            </ul>
+            </div>
+        </div>
+
+        <!-- HERRAMIENTAS -->
+        <div class="col-md-4">
+            <div class="skill-card">
+            <div class="d-flex align-items-center gap-3 mb-2">
+                <div class="rounded-circle d-flex align-items-center justify-content-center"
+                    style="width:50px;height:50px;background:#f0fdf4;">
+                <i class="bi bi-tools skill-icon"></i>
+                </div>
+                <h5 class="skill-title mb-0">Herramientas</h5>
+            </div>
+
+            <p class="text-muted small">
+                Control de versiones, debugging y trabajo colaborativo.
+            </p>
+
+            <div class="d-flex flex-wrap gap-2 my-3">
+                <span class="tech-badge">Git</span>
+                <span class="tech-badge">GitHub</span>
+                <span class="tech-badge">Visual Studio</span>
+                <span class="tech-badge">Git Bash</span>
+            </div>
+
+            <div class="mt-3">
+                <small>Git / GitHub</small>
+                <div class="skill-bar">
+                <div class="skill-bar-fill" style="--level:65%;;"></div>
+                </div>
+            </div>
+            </div>
+        </div>
+        </div>
+    </div>
+    </section>
+
+    <!-- PROYECTOS -->
+    <section id="proyectos" class="bg-white">
+        <div class="container">
+            <h2 class="section-title">Proyectos</h2>
+
+            <div class="row g-5">
+                <!-- PROYECTO 1 -->
+                 <div class="col-md-6">
+                    <div class="project-card p-0 overflow-hidden h-100">
+                        
+                        <!-- Imagen -->
+                         <div class="bg-dark text-center">
+                            <img src="img/logo.jpg" class="img-fluid" alt="Sistema de Pádel">
+                         </div>
+
+                         <div class="card-body p-4">
+                            <span class="badge bg-primary mb-2">Backend · Sistema</span>
+
+                            <h5 class="card-title mt-2">Sistema de Gestión de Pádel</h5>
+
+                            <p class="text-muted small">
+                                Plataforma para administrar turnos, jugadores y pagos,
+                                pensada para clubes de pádel
+                            </p>
+
+
+                            <!-- Highlights -->
+                             <ul class="small text-muted ps-3 mb-3">
+                                <li>Gestión de turnos y disponibilidad</li>
+                                <li>Persistencia de datos y lógica de negocio</li>
+                                <li>Deploy funcional en producción</li>
+                             </ul>
+
+
+                             <!-- Stack -->
+                              <div class="d-flex flex-wrap gap-2 mb-3">
+                                <span class="tech-badge">Python</span>
+                                <span class="tech-badge">SQLite</span>
+                                <span class="tech-badge">Backend</span>
+                              </div>
+
+                              <!-- CTA -->
+                               <div class="d-flex gap-2">
+                                <a href="https://github.com/BraianC12/EscuelitaDePadel"
+                                   class="btn btn-sm btn-outline-dark">
+                                   <i class="bi bi-github me-1"></i> GitHub
+                                </a>
+
+                                <a href="https://escuelitadepadel.onrender.com/"
+                                   class="btn btn-sm btn-dark">
+                                   <i class="bi bi-box-arrow-up-right me-1"></i> Live
+                                </a>
+                            </div>
+                         </div>
+                    </div>
+                 </div>
+
+                 <!-- PROYECTO 2 -->
+                 <div class="col-md-6">
+                    <div class="project-card p-0 overflow-hidden h-100">
+                        
+                        <!-- Imagen -->
+                         <div class="bg-dark text-center">
+                            <img src="img/ETL.png" class="img-fluid" alt="Proyecto ETL">
+                         </div>
+
+                         <div class="card-body p-4">
+                            <span class="badge bg-success mb-2">Data · ETL</span>
+
+                            <h5 class="card-title mt-2">Proyecto ETL + Análisis de Datos</h5>
+
+                            <p class="text-muted small">
+                                Desarrollo de un flujo ETL completo sobre datos ficticios
+                                de empleados para análisis y métricas.
+                            </p>
+
+
+                            <!-- Highlights -->
+                             <ul class="small text-muted ps-3 mb-3">
+                                <li>Extracción, transformación y carga</li>
+                                <li>Cálculo de métricas y validaciones</li>
+                                <li>Automatización del pipeline</li>
+                             </ul>
+
+
+                             <!-- Stack -->
+                              <div class="d-flex flex-wrap gap-2 mb-3">
+                                <span class="tech-badge">Python</span>
+                                <span class="tech-badge">ETL</span>
+                                <span class="tech-badge">Data</span>
+                              </div>
+
+                              <!-- CTA -->
+                               <div class="d-flex gap-2">
+                                <a href="https://github.com/BraianC12/etl_empleados"
+                                   class="btn btn-sm btn-outline-dark">
+                                   <i class="bi bi-github me-1"></i> GitHub
+                                </a>
+
+                            </div>
+                         </div>
+                    </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <!-- FOOTER -->
+    <footer class="text-center py-4">
+        <p class="mb-0">© 2026 Braian Carranza · Portfolio</p>
+    </footer>
+        
+        
+     <!-- BOOSTRAP JS -->
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+
+
+</body>
+</html>
