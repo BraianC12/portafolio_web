@@ -1,0 +1,276 @@
+:root {
+  --bg-dark: #0f172a;
+  --text-main: #e5e7eb;
+  --text-muted: #94a3b8;
+  --accent: #3b82f6;
+  --bg-light: #f8fafc;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-light);
+    color: #1e293b;
+}
+
+section {
+    padding: 120px 0;
+    scroll-margin-top: 90px;
+}
+
+.navbar {
+    backdrop-filter: blur(10px);
+}
+
+/* HERO */
+.hero-section {
+  min-height: 100vh;
+  background-color: var(--bg-dark);
+  display: flex;
+  align-items: center;
+}
+
+.hero-section .container {
+    max-width: 900px;
+}
+
+.hero-title {
+  font-size: 3.8rem;
+  font-weight: 700;
+  color: var(--text-main);
+  line-height: 1.1;
+}
+
+/* subtitulo */
+.hero-subtitle {
+    font-size: 1.15rem;
+    color: var(--text-muted);
+    max-width: 650px;
+}
+
+/* Botones */
+.hero-actions .btn-primary {
+    background-color: var(--accent);
+    border: none;
+    padding: 14px 36px;
+    font-weight: 600;
+    border-radius: 10px;
+}
+
+.hero-actions .btn-primary:hover {
+    background-color: #2563eb;
+}
+
+.hero-actions .btn-link {
+    color: var(--text-muted);
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.hero-actions .btn-link:hover {
+    color: var(--text-main);
+    text-decoration: underline;
+}
+
+
+/* SKILLS */
+.skill-box {
+    background: white;
+    padding: 25px;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s;
+    height: 100%;
+}
+
+.skill-box:hover {
+    transform: translateY(-8px);
+}
+
+.skill-box i {
+    font-size: 2rem;
+    color: var(--primary);
+}
+
+/*PRO*/
+.skill-card {
+    background: white;
+    border-radius: 20px;
+    padding: 30px;
+    height: 100%;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+    transition: all 0.35s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.skill-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    opacity: 0;
+    transition: 0.35s;
+}
+
+.skill-card:hover::before {
+    opacity: 0.08;
+}
+
+.skill-card:hover {
+    transform: translateY(-12px);
+}
+
+.skill-icon {
+    font-size: 2.5rem;
+    color: var(--primary);
+}
+
+.skill-title {
+    font-weight: 600;
+    margin-top: 15px;
+}
+
+.tech-badge {
+    background: #eef2ff;
+    color: #3730a3;
+    font-size: 0.85rem;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-weight: 500;
+}
+
+/* BARRAS*/
+.skill-bar {
+    height: 8px;
+    background: #e5e7eb;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+
+.skill-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--accent), #2563eb);
+  border-radius: 10px;
+  width: 0;
+  animation: grow 1.2s ease forwards;
+}
+
+
+@keyframes grow {
+    to {width: var(--level);}
+}
+
+
+/* PROJECTS */
+.project-card {
+    border: none;
+    border-radius: 20px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+    height: 100%;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+}
+
+
+/* CONTACTO */
+.contact-box {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));        
+    color: white;
+    padding: 50px;
+    border-radius: 25px;
+}
+
+footer {
+    background: var(--dark);
+    color: #cbd5f5;
+}
+
+/*NAV BAR*/
+.custom-navbar {
+    background: rgba(15, 23, 42, 0.85);
+    backdrop-filter: blur(12px);
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    letter-spacing: 0.5px;
+}
+
+.brand-text {
+    color: var(--text-main);
+    font-size: 0.95rem;
+    opacity: 0.85;
+}
+
+.nav-link {
+    color: var(--text-muted);
+    font-weight: 500;
+    position: relative;
+    padding: 4px 0;
+}
+
+.nav-link:hover {
+    color: var(--text-main);
+}
+
+.nav-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 0;
+    height: 2px;
+    background: var(--accent);
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/*FOOTER*/
+.footer {
+  background-color: var(--bg-dark);
+  color: var(--text-muted);
+  padding: 40px 0;
+  margin-top: 80px;
+}
+
+.footer strong {
+  color: var(--text-main);
+}
+
+.footer-link {
+  color: var(--text-muted);
+  font-size: 1.3rem;
+  margin-left: 16px;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.footer-link:hover {
+  color: var(--accent);
+  transform: translateY(-2px);
+}
+
+/*icono*/
+.navbar-brand i {
+  font-size: 1.3rem;
+  color: var(--accent);
+  transition: transform 0.2 ease, color 0.2s ease;
+}
+
+.navbar-brand:hover i {
+    transform: scale(1.1);
+    color: #2563eb;
+}
